@@ -1,0 +1,11 @@
+@import url('./my-bank-vars.scss');
+.bg-platinum {
+    background-color: var(--color-platinum);
+}
+
+.container-modify {
+    padding: 20px 80px 20px 80px;
+    background-image: url("https://mdbootstrap.com/img/new/fluid/city/018.jpg");
+    height: calc(100vh - 80px);
+    color: #ffffff;
+}

@@ -1,0 +1,91 @@
+<div class="card bg-ligth px-5">
+    <div class="pt-5 text-dark text-center">
+        <p class="h1  ">Seja um mybank</p>
+        <p class="lead">
+            Sendo um cliente mybank você tem inúmeras vantages.
+        </p>
+    </div>
+    <form role="form" [formGroup]="formPersonalData" class="row px-5 py-3">
+        <div class="col-6">
+            <label class="fw-light text-dark">Nome</label>
+            <input type="text" class="form-control form-control-sm" formControlName="name"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPersonalData,'name')" />
+        </div>
+        <div class="col-6">
+            <label class="fw-light text-dark">Sobrenome</label>
+            <input type="text" class="form-control form-control-sm" formControlName="lastName"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPersonalData,'lastName')" />
+        </div>
+        <div class="col-4">
+            <label class="fw-light text-dark">CPF*</label>
+            <input type="text" class="form-control form-control-sm" formControlName="cpf"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPersonalData,'cpf')" />
+        </div>
+        <div class="col-4">
+            <label class="fw-light text-dark">Email</label>
+            <input type="text" class="form-control form-control-sm" formControlName="email"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPersonalData,'email')" />
+        </div>
+        <div class="col-4">
+            <label class="fw-light text-dark">Telefone</label>
+            <input type="text" class="form-control form-control-sm" formControlName="telephone"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPersonalData,'telephone')" />
+        </div>
+    </form>
+    <form role="form" [formGroup]="formAddress" class="row px-5">
+        <div class="col-8">
+            <label class="fw-light text-dark">Endereço</label>
+            <input type="text" class="form-control form-control-sm" formControlName="place"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formAddress,'place')" />
+        </div>
+        <div class="col-4">
+            <label class="fw-light text-dark">Número</label>
+            <input type="number" class="form-control form-control-sm" formControlName="addressNumber"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formAddress,'addressNumber')" />
+        </div>
+        <div class="col-6">
+            <label class="fw-light text-dark">Complemento</label>
+            <input type="text" class="form-control form-control-sm" formControlName="complement" />
+        </div>
+
+        <div class="col-6">
+            <label class="fw-light text-dark">Bairro</label>
+            <input type="text" class="form-control form-control-sm" formControlName="district"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formAddress,'district')" />
+        </div>
+        <div class="col-2">
+            <label class="fw-light text-dark">CEP</label>
+            <input type="text" class="form-control form-control-sm" formControlName="zipcode"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formAddress,'zipcode')" />
+        </div>
+        <div class="col-4">
+            <label class="fw-light text-dark">Cidade</label>
+            <input type="text" class="form-control form-control-sm" formControlName="city"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formAddress,'city')" />
+        </div>
+        <div class="col-4">
+            <label class="fw-light text-dark">Estado</label>
+            <input type="text" class="form-control form-control-sm" formControlName="state"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formAddress,'state')" />
+        </div>
+
+    </form>
+    <form role="form" [formGroup]="formPassword" class="row px-5">
+        <div class="col-6">
+            <label class="fw-light text-dark">Senha</label>
+            <input type="password" class="form-control form-control-sm" formControlName="password"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPassword,'password')" />
+        </div>
+        <div class="col-6">
+            <label class="fw-light text-dark">Confirma senha</label>
+            <input type="password" class="form-control form-control-sm" formControlName="repeatPassword"
+                [ngClass]="formValidatorsAplyCSS.applyInvalidClass(formPassword,'repeatPassword')" />
+        </div>
+    </form>
+    <div class="card-body">
+        <div class="d-grid gap-0 d-md-flex justify-content-md-end mt-4">
+            <button class="btn btn-secondary btn-sm text-uppercase" type="button" (click)="send()">Avançar</button>
+        </div>
+    </div>
+</div>
+<app-alert></app-alert>

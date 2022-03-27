@@ -1,0 +1,29 @@
+<div class="card bg-ligth w-50 container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-body">
+                <h5 class="card-title text-dark text-center">Faça seu login</h5>
+                <form role="form ">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-dark">Email</label>
+                        <input type="text" class="form-control form-control-sm" [(ngModel)]="login.email"
+                            [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label text-dark">Senha</label>
+                        <input type="password" class="form-control form-control-sm" [(ngModel)]="login.password"
+                            [ngModelOptions]="{standalone: true}">
+                    </div>
+                    <div class="d-grid gap-2 mb-5 mt-5">
+                        <button class="btn btn-secondary" type="button" (click)="send()">Entrar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="mb-3 form-check text-center pb-3">
+                <a class="form-check-label text-dark" for="exampleCheck1">Ainda não sou cliente</a>
+              </div>
+        </div>
+    </div>
+
+</div>
+<app-alert></app-alert>

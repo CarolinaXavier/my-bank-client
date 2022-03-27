@@ -1,0 +1,32 @@
+<div class="card bg-dark opacity-75">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fa fa-dollar-sign me-2"></i>Bank Accounts</h5>
+                <ul class="list-group list-group-flush rounded">
+                    <li class="list-group-item" *ngFor="let account of bankAccounts; index as i;">
+                        <div class="col-md-12">
+                            <div class="card border-0">
+                                <div class="card-body">
+                                    <p class="card-text">Agência: {{ account.agency }}</p>
+                                    <h5 class="card-title">Conta: {{ account.accountNumber }}</h5>
+                                    <span class="me-1">Status<i class="fa ms-2"
+                                            [ngClass]="account.active ? 'fa-check' : 'fa-dollar-sign'"></i></span>
+                                    <span class="ms-1">{{ account.balance | currency : 'BR '}}<i
+                                            class="fa fa-dollar-sign ms-2"></i></span>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-grid gap-0 d-md-flex justify-content-md-end mt-4">
+                                        <button class="btn btn-secondary btn-sm text-uppercase" type="button"
+                                            [disabled]="!account.active"
+                                            (click)="goToTransactions(account)">Extrato</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
