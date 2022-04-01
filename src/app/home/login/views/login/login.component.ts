@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.login).subscribe(response => {
       if (response && response.access_token) {
         this.loginService.setToken(response.access_token)
+        this.loginService.setUser(response.user)
         this.router.navigate(['/'])
       } else {
         this.alertService.error('Error', 'Unauthorized', true)

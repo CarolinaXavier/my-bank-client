@@ -7,22 +7,22 @@ import { FormGroup } from "@angular/forms";
 export class FormValidatorsCustom {
 
     static isValidForms(...forms: FormGroup[]): any {
-        let invalidsControls: string[] = [];
+        let invalidsControls: string[] = []
         forms.forEach(form => {
             if (!form.valid) {
                 Object.keys(form.controls).forEach(control => {
-                    const f = form.get(control);
+                    const f = form.get(control)
                     if (f) {
-                        f.markAsDirty();
-                        invalidsControls.push(control);
+                        f.markAsDirty()
+                        invalidsControls.push(control)
                     }
                 });
             }
         })
         if (invalidsControls.length > 0) {
-            return false;
+            return false
         } else {
-            return true;
+            return true
         }
     }
 

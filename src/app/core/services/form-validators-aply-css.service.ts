@@ -15,7 +15,7 @@ export class FormValidatorsAplyCSS {
     }
 
     public virifyValidTouched(form: FormGroup | any, field: string) {
-        return !form.get(field).valid && (form.get(field).touched || form.get(field).dirty);
+        return !form.get(field).valid && (form.get(field).touched || form.get(field).dirty)
     }
 
 }

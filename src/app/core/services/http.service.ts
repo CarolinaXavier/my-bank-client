@@ -47,7 +47,7 @@ export class HttpService {
 
     public delete(url: string, data: any | number): Observable<any> {
         const _id = typeof data === 'number' ? data : data._id;
-        const _url = `${this.apiURL + url}/${_id}`;
+        const _url = `${this.apiURL + url}/${_id}`
         return this.httpClient.delete<any>(_url, {
             headers: this.headers
         }).pipe(
@@ -57,9 +57,9 @@ export class HttpService {
 
     private handleError<T>(operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
-            console.error(error);
-            console.log(`${operation} failed: ${error.message}`);
-            return of(result as T);
+            console.error(error)
+            console.log(`${operation} failed: ${error.message}`)
+            return of(result as T)
         };
     }
 }

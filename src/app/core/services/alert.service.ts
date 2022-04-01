@@ -7,16 +7,16 @@ import { Observable, Subject } from 'rxjs';
 })
 export class AlertService {
 
-    private subject = new Subject<any>();
-    private keepAfterRouteChange = false;
+    private subject = new Subject<any>()
+    private keepAfterRouteChange = false
 
     constructor(private router: Router) {
         this.router.events.subscribe(event => {
             if (event instanceof NavigationStart) {
                 if (this.keepAfterRouteChange) {
-                    this.keepAfterRouteChange = false;
+                    this.keepAfterRouteChange = false
                 } else {
-                    this.clear();
+                    this.clear()
                 }
             }
         });
